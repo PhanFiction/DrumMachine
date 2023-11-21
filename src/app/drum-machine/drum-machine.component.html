@@ -1,66 +1,313 @@
-<section class="flex min-w-screen min-h-screen flex-col justify-center p-12">
-  <div class="flex p-20 w-full shadow-xl rounded-lg mx-auto bg-blackBG text-white flex-col">
-    <div class="bg-cardBlack">
-      <p>Item</p>
+<section class="flex flex-col min-w-screen min-h-screen justify-center sm:rounded-lg bg-gainsboro">
+  <article class="flex flex-col p-8 mx-4 sm:w-3/4 lg:2/4 text-white sm:mx-auto rounded-lg bg-oldlace shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)_inset] border-[1px] border-solid border-gray-200">
+    <div
+      class="leading-[100%] text-black flex items-center justify-center bg-goldenrod-300 rounded-md p-4"
+    >
+      <h2 class="font-lemonada text-6xl m-4">Drum Pressed</h2>
     </div>
-    <div>
-      <div>
-        <p>Item 1</p>
-        <p>Item 2</p>
-        <p>Item 3</p>
+    <div class="flex flex-col sm:flex-row sm:space-x-4 my-8 space-y-4 sm:space-y-0">
+      <div class="flex flex-col bg-goldenrod-300 w-full sm:w-2/4 p-8 space-y-4">
+        <h2 class="font-lemonada text-center text-black text-lg">Press a Button?</h2>
+        <div class="flex bg-gray-100 align-middle justify-center">
+          <button *ngFor="let key of keys.slice(0, 3)" class="bg-goldenrod-400 px-3 py-1 m-4 rounded-md">
+            <span class="text-white text-2xl font-lemonada">
+              {{ key }}
+            </span>
+          </button>
+        </div>
+        <div class="flex bg-gray-100 align-middle justify-center">
+          <button *ngFor="let key of keys.slice(3, 8)" class="bg-goldenrod-400 px-3 py-1 m-4 rounded-md">
+            <span class="text-white text-2xl font-lemonada">
+              {{ key }}
+            </span>
+          </button>
+        </div>
+        <div class="flex bg-gray-100 align-middle justify-center">
+          <button *ngFor="let key of keys.slice(8)" class="bg-goldenrod-400 px-3 py-1 m-4 rounded-md">
+            <span class="text-white text-2xl font-lemonada">
+              {{ key }}
+            </span>
+          </button>
+        </div>
       </div>
-      <div>
-        box 3
+    </div>
+  </article>
+  <div
+  class="relative bg-gainsboro w-full overflow-hidden flex flex-col items-center justify-center py-[59px] px-[161px] box-border gap-[10px] text-center text-13xl text-white font-lemonada"
+>
+  <div
+    class="relative rounded-mini bg-oldlace shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)_inset] box-border w-[800px] h-[500px] z-[0] border-[1px] border-solid border-gray-200"
+  ></div>
+  <div
+    class="my-0 mx-[!important] absolute top-[297px] left-[596px] flex flex-col items-center justify-center gap-[10px] z-[1] font-font-awesome-5-brands"
+  >
+    <div
+      class="relative rounded-lgi bg-goldenrod-300 w-[325px] h-[215px] z-[0]"
+    ></div>
+    <img
+      class="absolute my-0 mx-[!important] top-[109px] left-[40px] w-[258px] h-[43px] z-[1]"
+      alt=""
+      src="/public/group-1.svg"
+    />
+
+    <div
+      class="absolute my-0 mx-[!important] top-[50px] left-[50px] w-[171px] h-9 z-[2]"
+    >
+      <div
+        class="absolute top-[0px] left-[66px] rounded-12xs bg-goldenrod-100 shadow-[0px_4px_4px_rgba(0,_0,_0,_0.01)] w-[105px] h-9 mix-blend-multiply"
+      ></div>
+      <div
+        class="absolute top-[4px] left-[71px] rounded-12xs bg-goldenrod-200 shadow-[0px_4px_4px_rgba(0,_0,_0,_0.01)] w-[95px] h-7 mix-blend-lighten"
+      ></div>
+      <div
+        class="absolute top-[6px] left-[74px] rounded-12xs bg-olive w-[89px] h-6 mix-blend-darken"
+      ></div>
+      <div
+        class="absolute top-[6px] left-[74px] rounded-12xs bg-gray-300 shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)_inset] w-[46px] h-6"
+      >
+      </div>
+      <div
+        class="absolute top-[8px] left-[87px] leading-[100%] flex items-center justify-center w-[18px] h-[18px]"
+      >
+        o
+      </div>
+      <div
+        class="absolute top-[1px] left-[0px] text-base leading-[100%] font-lemonada text-black flex items-center justify-center w-[62px] h-[31px]"
+      >
+        Power
       </div>
     </div>
   </div>
-</section>
-<div class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">
-  <div class="absolute inset-0 bg-[url(/img/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
-  <div class="relative bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10">
-    <div class="mx-auto max-w-md">
-      <img src="/img/logo.svg" class="h-6" alt="Tailwind Play" />
-      <div class="divide-y divide-gray-300/50">
-        <div class="space-y-6 py-8 text-base leading-7 text-gray-600">
-          <p>An advanced online playground for Tailwind CSS, including support for things like:</p>
-          <ul class="space-y-4">
-            <li class="flex items-center">
-              <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="11" />
-                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
-              </svg>
-              <p class="ml-4">
-                Customizing your
-                <code class="text-sm font-bold text-gray-900">tailwind.config.js</code> file
-              </p>
-            </li>
-            <li class="flex items-center">
-              <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="11" />
-                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
-              </svg>
-              <p class="ml-4">
-                Extracting classes with
-                <code class="text-sm font-bold text-gray-900">@apply</code>
-              </p>
-            </li>
-            <li class="flex items-center">
-              <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="11" />
-                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
-              </svg>
-              <p class="ml-4">Code completion with instant preview</p>
-            </li>
-          </ul>
-          <p>Perfect for learning how the framework works, prototyping a new idea, or creating a demo to share online.</p>
-        </div>
-        <div class="pt-8 text-base font-semibold leading-7">
-          <p class="text-gray-900">Want to dig deeper into Tailwind?</p>
-          <p>
-            <a href="https://tailwindcss.com/docs" class="text-sky-500 hover:text-sky-600">Read the docs &rarr;</a>
-          </p>
+  <img
+    class="absolute my-0 mx-[!important] top-[105px] left-[221px] w-[700px] h-[139px] z-[2]"
+    alt=""
+    src="/public/group-2.svg"
+  />
+
+  <div
+    class="absolute my-0 mx-[!important] top-[calc(50%_-_12px)] left-[calc(50%_-_340px)] w-[325px] h-[215px] z-[3] text-base"
+  >
+    <div
+      class="absolute h-full top-[0px] right-[0px] bottom-[0px] w-[325px]"
+    >
+      <div
+        class="absolute top-[0px] left-[0px] rounded-lgi bg-goldenrod-300 w-[325px] h-[215px]"
+      ></div>
+      <div
+        class="absolute top-[calc(50%_-_39.5px)] left-[calc(50%_-_72.5px)] w-[150px] h-9"
+      >
+        <div
+          class="absolute top-[calc(50%_-_18px)] left-[calc(50%_-_75px)] rounded-10xs bg-gray-100 w-[150px] h-9"
+        ></div>
+        <div
+          class="absolute top-[calc(50%_-_12.5px)] left-[calc(50%_-_75px)] w-[150px] flex flex-row items-center justify-center gap-[15px]"
+        >
+          <div class="relative w-6 h-[25px]">
+            <div
+              class="absolute h-[92%] w-[95.83%] top-[8%] right-[0%] bottom-[0%] left-[4.17%] rounded-10xs bg-goldenrod-400 [filter:blur(4px)]"
+            ></div>
+            <div
+              class="absolute h-[92%] w-[95.83%] top-[0%] right-[4.17%] bottom-[8%] left-[0%] rounded-10xs bg-goldenrod-400 shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)]"
+            ></div>
+            <div
+              class="absolute h-[calc(100%_-_2px)] w-[calc(100%_-_12.5px)] top-[0px] left-[6px] leading-[100%] flex items-center justify-center"
+            >
+              Q
+            </div>
+          </div>
+          <div class="relative w-6 h-[25px]">
+            <div
+              class="absolute h-[92%] w-[95.83%] top-[8%] right-[0%] bottom-[0%] left-[4.17%] rounded-10xs bg-goldenrod-400 [filter:blur(4px)]"
+            ></div>
+            <div
+              class="absolute h-[92%] w-[95.83%] top-[0%] right-[4.17%] bottom-[8%] left-[0%] rounded-10xs bg-goldenrod-400 shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)]"
+            ></div>
+            <div
+              class="absolute h-[calc(100%_-_2px)] w-[calc(100%_-_12.5px)] top-[0px] left-[6px] leading-[100%] flex items-center justify-center"
+            >
+              W
+            </div>
+          </div>
+          <div class="relative w-6 h-[25px]">
+            <div
+              class="absolute h-[92%] w-[95.83%] top-[8%] right-[0%] bottom-[0%] left-[4.17%] rounded-10xs bg-goldenrod-400 [filter:blur(4px)]"
+            >
+          </div>
+            <div
+              class="absolute h-[92%] w-[95.83%] top-[0%] right-[4.17%] bottom-[8%] left-[0%] rounded-10xs bg-goldenrod-400 shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)]"
+            >
+          </div>
+            <div
+              class="absolute h-[calc(100%_-_2px)] w-[calc(100%_-_12.5px)] top-[0px] left-[6px] leading-[100%] flex items-center justify-center"
+            >
+              E
+            </div>
+          </div>
         </div>
       </div>
+      <div
+        class="absolute top-[calc(50%_+_4.5px)] left-[calc(50%_-_137.5px)] w-[277px] h-9"
+      >
+        <div
+          class="absolute top-[0px] left-[0px] rounded-10xs bg-gray-100 w-[277px] h-9"
+        ></div>
+        <div
+          class="absolute top-[calc(50%_-_13px)] left-[calc(50%_-_99.5px)] w-[200px] flex flex-row items-center justify-start gap-[20px]"
+        >
+          <div class="relative w-6 h-[25px]">
+            <div
+              class="absolute h-[92%] w-[95.83%] top-[8%] right-[0%] bottom-[0%] left-[4.17%] rounded-10xs bg-goldenrod-400 [filter:blur(4px)]"
+            ></div>
+            <div
+              class="absolute h-[92%] w-[95.83%] top-[0%] right-[4.17%] bottom-[8%] left-[0%] rounded-10xs bg-goldenrod-400 shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)]"
+            ></div>
+            <div
+              class="absolute h-[calc(100%_-_2px)] w-[calc(100%_-_12.5px)] top-[0px] left-[6px] leading-[100%] flex items-center justify-center"
+            >
+              A
+            </div>
+          </div>
+          <div class="relative w-6 h-[25px]">
+            <div
+              class="absolute h-[92%] w-[95.83%] top-[8%] right-[0%] bottom-[0%] left-[4.17%] rounded-10xs bg-goldenrod-400 [filter:blur(4px)]"
+            ></div>
+            <div
+              class="absolute h-[92%] w-[95.83%] top-[0%] right-[4.17%] bottom-[8%] left-[0%] rounded-10xs bg-goldenrod-400 shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)]"
+            ></div>
+            <div
+              class="absolute h-[calc(100%_-_2px)] w-[calc(100%_-_12.5px)] top-[0px] left-[6px] leading-[100%] flex items-center justify-center"
+            >
+              S
+            </div>
+          </div>
+          <div class="relative w-6 h-[25px]">
+            <div
+              class="absolute h-[92%] w-[95.83%] top-[8%] right-[0%] bottom-[0%] left-[4.17%] rounded-10xs bg-goldenrod-400 [filter:blur(4px)]"
+            ></div>
+            <div
+              class="absolute h-[92%] w-[95.83%] top-[0%] right-[4.17%] bottom-[8%] left-[0%] rounded-10xs bg-goldenrod-400 shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)]"
+            ></div>
+            <div
+              class="absolute h-[calc(100%_-_2px)] w-[calc(100%_-_12.5px)] top-[0px] left-[6px] leading-[100%] flex items-center justify-center"
+            >
+              D
+            </div>
+          </div>
+          <div class="relative w-6 h-[25px]">
+            <div
+              class="absolute h-[92%] w-[95.83%] top-[8%] right-[0%] bottom-[0%] left-[4.17%] rounded-10xs bg-goldenrod-400 [filter:blur(4px)]"
+            ></div>
+            <div
+              class="absolute h-[92%] w-[95.83%] top-[0%] right-[4.17%] bottom-[8%] left-[0%] rounded-10xs bg-goldenrod-400 shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)]"
+            ></div>
+            <div
+              class="absolute h-[calc(100%_-_2px)] w-[calc(100%_-_12.5px)] top-[0px] left-[6px] leading-[100%] flex items-center justify-center"
+            >
+              E
+            </div>
+          </div>
+          <div class="relative w-6 h-[25px]">
+            <div
+              class="absolute h-[92%] w-[95.83%] top-[8%] right-[0%] bottom-[0%] left-[4.17%] rounded-10xs bg-goldenrod-400 [filter:blur(4px)]"
+            ></div>
+            <div
+              class="absolute h-[92%] w-[95.83%] top-[0%] right-[4.17%] bottom-[8%] left-[0%] rounded-10xs bg-goldenrod-400 shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)]"
+            ></div>
+            <div
+              class="absolute h-[calc(100%_-_2px)] w-[calc(100%_-_12.5px)] top-[0px] left-[6px] leading-[100%] flex items-center justify-center"
+            >
+              F
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="absolute top-[calc(50%_+_48.5px)] left-[calc(50%_-_137.5px)] w-[277px] h-9"
+      >
+        <div
+          class="absolute top-[0px] left-[0px] rounded-10xs bg-gray-100 w-[277px] h-9"
+        ></div>
+        <div
+          class="absolute top-[calc(50%_-_13px)] left-[calc(50%_-_99.5px)] flex flex-row items-center justify-center gap-[20px]"
+        >
+          <div class="relative w-6 h-[25px]">
+            <div
+              class="absolute h-[92%] w-[95.83%] top-[8%] right-[0%] bottom-[0%] left-[4.17%] rounded-10xs bg-goldenrod-400 [filter:blur(4px)]"
+            ></div>
+            <div
+              class="absolute h-[92%] w-[95.83%] top-[0%] right-[4.17%] bottom-[8%] left-[0%] rounded-10xs bg-goldenrod-400 shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)]"
+            ></div>
+            <div
+              class="absolute h-[calc(100%_-_2px)] w-[calc(100%_-_12.5px)] top-[0px] left-[6px] leading-[100%] flex items-center justify-center"
+            >
+              Z
+            </div>
+          </div>
+          <div class="relative w-6 h-[25px]">
+            <div
+              class="absolute h-[92%] w-[95.83%] top-[8%] right-[0%] bottom-[0%] left-[4.17%] rounded-10xs bg-goldenrod-400 [filter:blur(4px)]"
+            ></div>
+            <div
+              class="absolute h-[92%] w-[95.83%] top-[0%] right-[4.17%] bottom-[8%] left-[0%] rounded-10xs bg-goldenrod-400 shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)]"
+            ></div>
+            <div
+              class="absolute h-[calc(100%_-_2px)] w-[calc(100%_-_12.5px)] top-[0px] left-[6px] leading-[100%] flex items-center justify-center"
+            >
+              X
+            </div>
+          </div>
+          <div class="relative w-6 h-[25px]">
+            <div
+              class="absolute h-[92%] w-[95.83%] top-[8%] right-[0%] bottom-[0%] left-[4.17%] rounded-10xs bg-goldenrod-400 [filter:blur(4px)]"
+            ></div>
+            <div
+              class="absolute h-[92%] w-[95.83%] top-[0%] right-[4.17%] bottom-[8%] left-[0%] rounded-10xs bg-goldenrod-400 shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)]"
+            ></div>
+            <div
+              class="absolute h-[calc(100%_-_2px)] w-[calc(100%_-_12.5px)] top-[0px] left-[6px] leading-[100%] flex items-center justify-center"
+            >
+              C
+            </div>
+          </div>
+          <div class="relative w-6 h-[25px]">
+            <div
+              class="absolute h-[92%] w-[95.83%] top-[8%] right-[0%] bottom-[0%] left-[4.17%] rounded-10xs bg-goldenrod-400 [filter:blur(4px)]"
+            ></div>
+            <div
+              class="absolute h-[92%] w-[95.83%] top-[0%] right-[4.17%] bottom-[8%] left-[0%] rounded-10xs bg-goldenrod-400 shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)]"
+            ></div>
+            <div
+              class="absolute h-[calc(100%_-_2px)] w-[calc(100%_-_12.5px)] top-[0px] left-[6px] leading-[100%] flex items-center justify-center"
+            >
+              V
+            </div>
+          </div>
+          <div class="relative w-6 h-[25px]">
+            <div
+              class="absolute h-[92%] w-[95.83%] top-[8%] right-[0%] bottom-[0%] left-[4.17%] rounded-10xs bg-goldenrod-400 [filter:blur(4px)]"
+            ></div>
+            <div
+              class="absolute h-[92%] w-[95.83%] top-[0%] right-[4.17%] bottom-[8%] left-[0%] rounded-10xs bg-goldenrod-400 shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)]"
+            ></div>
+            <div
+              class="absolute h-[calc(100%_-_2px)] w-[calc(100%_-_12.5px)] top-[0px] left-[6px] leading-[100%] flex items-center justify-center"
+            >
+              B
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="absolute top-[21px] left-[76px] leading-[100%] text-black flex items-center justify-center w-[180px] h-[30px]"
+      >
+        Press a Button?
+      </div>
     </div>
+  </div>
+  <div
+    class="absolute my-0 mx-[!important] top-[145px] left-[260px] text-[48px] leading-[100%] text-black flex items-center justify-center w-[617px] h-[69px] shrink-0 z-[4]"
+  >
+    Drum pressed
   </div>
 </div>
+</section>

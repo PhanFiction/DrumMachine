@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Keys, keys } from '../keys';
 
 @Component({
   selector: 'app-drum-machine',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./drum-machine.component.css']
 })
 export class DrumMachineComponent {
-
+  keys: Keys = keys;
 }
