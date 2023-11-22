@@ -22,10 +22,14 @@ module.exports = {
         },
         olive: "rgba(142, 113, 36, 0.8)",
         oldlace: "#e8eddf",
+        oldBrown: "#8E7124",
       },
       fontFamily: {
         lemonada: "Lemonada",
         "font-awesome-5-brands": "'Font Awesome 5 Brands'",
+      },
+      fontSize: {
+        
       },
     },
   },

@@ -8,4 +8,10 @@ import { Keys, keys } from '../keys';
 })
 export class DrumMachineComponent {
   keys: Keys = keys;
+  toggle = true;
+
+  handlePowerToggle() {
+    console.log('click');
+    this.toggle = !this.toggle;
+  }
 }
