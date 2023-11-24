@@ -1,0 +1,15 @@
+<div class="w-3/4 sm:w-3/4 rounded-12xs bg-goldenrod-400 p-4 z-10 mx-auto rounded-lg">
+  <div class="bg-goldenrod-100 p-4 shadow-[0px_4px_4px_rgba(0,0,0,0.2)] z-20 rounded-md">
+      <div *ngIf="toggle">
+        <div class="flex bg-oldBrown">
+          <button (click)="handlePowerToggle()" class="w-full py-1 bg-gray-100 shadow-[0px_4px_4px_rgba(0,0,0,0.2)]">O</button>
+          <button (click)="handlePowerToggle()" class="w-full py-1">|</button>
+        </div>
+      </div>
+      <div *ngIf="!toggle">
+        <div class="flex bg-oldBrown">
+          <button (click)="handlePowerToggle()" class="w-full py-1">O</button>
+          <button (click)="handlePowerToggle()" class="w-full py-1 bg-gray-100 shadow-[0px_4px_4px_rgba(0,0,0,0.2)]">|</button>
+      </div>
+    </div>
+  </div>

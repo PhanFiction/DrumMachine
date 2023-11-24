@@ -1,42 +1,17 @@
-<section class="flex flex-col min-w-screen min-h-screen justify-center sm:rounded-lg bg-gainsboro">
-  <article class="flex flex-col p-8 mx-4 sm:w-3/4 lg:2/4 text-white sm:mx-auto rounded-lg bg-oldlace shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)_inset] border-[1px] border-solid border-gray-200">
+<section id="drum-machine" class="flex flex-col min-w-screen min-h-screen justify-center sm:rounded-lg bg-gainsboro" (keypress)="handleKeyPress($event)">
+  <article id="display" class="flex flex-col p-8 mx-4 sm:w-3/4 lg:2/4 text-white sm:mx-auto rounded-lg bg-oldlace shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)_inset] border-[1px] border-solid border-gray-200">
     <div class="text-black flex items-center justify-center bg-goldenrod-300 rounded-md p-4">
-      <h2 class="font-lemonada text-3xl m-4 sm:text-5xl text-center ">Drum Pressed</h2>
+      <h3 class="font-lemonada text-lg m-4 sm:text-4xl text-center ">{{message}}</h3>
     </div>
     <div class="flex flex-col sm:flex-row sm:space-x-4 my-8 space-y-4 sm:space-y-0">
       <div class="flex flex-col bg-goldenrod-300 w-full sm:w-2/4 p-2 sm:p-8 space-y-4">
-        <h2 class="font-lemonada text-center text-black text-lg">Press a Button?</h2>
-        <div class="flex bg-gray-100 align-middle justify-center">
-          <app-key-btn [keys]="keys" [startSlice]="0" [endSlice]="3"></app-key-btn>
-        </div>
-        <div class="flex bg-gray-100 align-middle justify-center">
-          <app-key-btn [keys]="keys" [startSlice]="3" [endSlice]="8"></app-key-btn>
-        </div>
-        <div class="flex bg-gray-100 align-middle justify-center">
-          <app-key-btn [keys]="keys" [startSlice]="8" [endSlice]="keys.length"></app-key-btn>
-        </div>
+        <app-key-btn [keys]="keys" [startSlice]="0" [endSlice]="3" (keyNotify)="handleKeyClick($event)"></app-key-btn>
+        <app-key-btn [keys]="keys" [startSlice]="3" [endSlice]="8" (keyNotify)="handleKeyClick($event)"></app-key-btn>
+        <app-key-btn [keys]="keys" [startSlice]="8" [endSlice]="keys.length" (keyNotify)="handleKeyClick($event)"></app-key-btn>
       </div>
       <div class="flex flex-col bg-goldenrod-300 w-full sm:w-2/4 p-8 space-y-4">
-        <div class="w-3/4 sm:w-3/4 rounded-12xs bg-goldenrod-400 p-4 z-10 mx-auto rounded-lg">
-          <div class="bg-goldenrod-100 p-4 shadow-[0px_4px_4px_rgba(0,0,0,0.2)] z-20 rounded-md">
-              <div *ngIf="toggle">
-                <div class="flex bg-oldBrown">
-                  <button (click)="handlePowerToggle()" class="w-full py-1 bg-gray-100 shadow-[0px_4px_4px_rgba(0,0,0,0.2)]">O</button>
-                  <button (click)="handlePowerToggle()" class="w-full py-1">|</button>
-                </div>
-              </div>
-              <div *ngIf="!toggle">
-                <div class="flex bg-oldBrown">
-                  <button (click)="handlePowerToggle()" class="w-full py-1">O</button>
-                  <button (click)="handlePowerToggle()" class="w-full py-1 bg-gray-100 shadow-[0px_4px_4px_rgba(0,0,0,0.2)]">|</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="w-full">
-          <label for="default-range" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Default range</label>
-          <input id="default-range" type="range" value="50" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
-        </div>
+        <app-power-btn [toggle]="toggle" (toggleNotify)="handlePowerToggle($event)"></app-power-btn>
+        <app-vol-slider [volume]="volume" (volumeNotify)="handleVolume($event)"></app-vol-slider>
       </div>
     </div>
   </article>
